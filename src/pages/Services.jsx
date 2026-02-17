@@ -1,121 +1,111 @@
 import React from 'react';
-import { Monitor, Smartphone, Tablet, Palette, Search, TrendingUp, Code, Database, Cloud } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import styles from './Services.module.css';
 
 const Services = () => {
-    const services = [
+    const mainServices = [
         {
-            icon: <Monitor size={50} style={{ color: '#a855f7' }} />,
             title: "Website Development",
-            desc: "Custom, responsive websites built with modern technologies",
-            features: ["Responsive Design", "SEO Optimized", "Fast Performance", "CMS Integration"]
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+            label: "Website Development"
         },
         {
-            icon: <Smartphone size={50} style={{ color: '#3b82f6' }} />,
-            title: "Mobile App Development",
-            desc: "Native and cross-platform mobile applications",
-            features: ["iOS & Android", "React Native", "Flutter", "App Store Deployment"]
+            title: "Mobile Apps Development",
+            image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&q=80&w=800",
+            label: "Mobile Apps Development"
         },
         {
-            icon: <Palette size={50} style={{ color: '#f472b6' }} />,
-            title: "UI/UX Design",
-            desc: "Beautiful, user-centered design solutions",
-            features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
-        },
-        {
-            icon: <Search size={50} style={{ color: '#22d3ee' }} />,
-            title: "SEO & Marketing",
-            desc: "Drive traffic and grow your online presence",
-            features: ["SEO Optimization", "Content Strategy", "Social Media", "Analytics"]
-        },
-        {
-            icon: <Code size={50} style={{ color: '#4ade80' }} />,
-            title: "Custom Development",
-            desc: "Tailored software solutions for your business",
-            features: ["API Development", "Integrations", "Automation", "Consulting"]
-        },
-        {
-            icon: <Cloud size={50} style={{ color: '#fb923c' }} />,
-            title: "Cloud Solutions",
-            desc: "Scalable cloud infrastructure and deployment",
-            features: ["AWS/Azure", "DevOps", "CI/CD", "Monitoring"]
+            title: "Wordpress Development",
+            image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=800",
+            label: "Wordpress Development"
         }
     ];
 
-    const process = [
-        { step: "01", title: "Discovery", desc: "Understanding your needs and goals" },
-        { step: "02", title: "Planning", desc: "Creating a strategic roadmap" },
-        { step: "03", title: "Design", desc: "Crafting beautiful interfaces" },
-        { step: "04", title: "Development", desc: "Building with best practices" },
-        { step: "05", title: "Testing", desc: "Ensuring quality and performance" },
-        { step: "06", title: "Launch", desc: "Deploying and monitoring" }
+    const specializedAds = [
+        {
+            title: "Google Ads Service",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+        },
+        {
+            title: "Meta Ads Service",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+        },
+        {
+            title: "UI/UX Design Figma",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+        }
     ];
 
     return (
-        <div className="services-page">
-            {/* Hero Section */}
-            <section className="services-hero">
-                <div className="container">
-                    <h1 className="services-hero-title">
-                        Our <span className="gradient-text">Services</span>
-                    </h1>
-                    <p className="services-hero-desc">
-                        Comprehensive digital solutions to help your business grow and succeed in the modern world.
+        <div className={styles.servicesPage}>
+            {/* 1. Immersive Hero - Synced with Projects Hero */}
+            <section className={styles.hero}>
+                <div className={`${styles.heroContent} ${styles.container}`}>
+                    <div className={styles.heroMainTitleGroup}>
+                        <span className={styles.heroTag}>Our Expertise</span>
+                        <h1 className={styles.heroTitle}>
+                            Smart Software
+                            <span className={styles.blueText}> Labs.</span>
+                        </h1>
+                    </div>
+                    <p className={styles.heroSubtitle}>
+                        Revolutionizing the future through intelligent code and master craftsmanship.
                     </p>
                 </div>
             </section>
 
-            {/* Services Grid */}
-            <section className="services-grid-section">
-                <div className="container">
-                    <div className="services-grid-wrapper">
-                        {services.map((service, index) => (
-                            <div key={index} className="service-detail-card">
-                                <div className="service-detail-icon">
-                                    {service.icon}
+            {/* 2. Narrative Intro */}
+            <section className={styles.container}>
+                <div className={styles.sectionHeader}>
+                    <h2 className={styles.mainHeading}>
+                        Shaping<br />
+                        <span className={styles.blueText}>Digital Excellence.</span>
+                    </h2>
+                    <p className={styles.introDesc}>
+                        We design and build high-quality digital products, and help growth-oriented companies.
+                    </p>
+                </div>
+            </section>
+
+            {/* 3. Main Service Grid (Interactive) */}
+            <section className={styles.container}>
+                <div className={styles.serviceGrid}>
+                    {mainServices.map((service, index) => (
+                        <div key={index} className={styles.serviceCard}>
+                            <img src={service.image} alt={service.title} className={styles.cardImage} />
+                            <div className={styles.labelBar}>
+                                <span className={styles.greenLabel}>{service.label}</span>
+                            </div>
+                            <div className={styles.cardOverlay}>
+                                <h3 className={styles.overlayTitle}>{service.title}</h3>
+                                <div className={styles.arrowIcon}>
+                                    <ArrowUpRight size={28} color="#fff" />
                                 </div>
-                                <h3 className="service-detail-title">{service.title}</h3>
-                                <p className="service-detail-desc">{service.desc}</p>
-                                <ul className="service-detail-features">
-                                    {service.features.map((feature, idx) => (
-                                        <li key={idx}>{feature}</li>
-                                    ))}
-                                </ul>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </section>
 
-            {/* Process Section */}
-            <section className="services-process">
-                <div className="container">
-                    <div className="section-header-center">
-                        <span className="section-label">How We Work</span>
-                        <h2 className="section-title">
-                            Our <span className="gradient-text">Process</span>
-                        </h2>
-                    </div>
-
-                    <div className="process-grid">
-                        {process.map((item, index) => (
-                            <div key={index} className="process-step">
-                                <div className="process-step-number">{item.step}</div>
-                                <h3 className="process-step-title">{item.title}</h3>
-                                <p className="process-step-desc">{item.desc}</p>
+            {/* 4. Specialized Tiers (Interactive) */}
+            <section className={styles.container}>
+                <div className={styles.serviceGrid}>
+                    {specializedAds.map((tier, index) => (
+                        <div key={index} className={styles.serviceCard}>
+                            <div className={styles.logoRowCard} style={{ width: '100%', height: '100%', background: '#fff' }}>
+                                <img src={tier.logo} alt={tier.title} style={{ width: '130px', objectFit: 'contain' }} />
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="services-cta">
-                <div className="container">
-                    <div className="services-cta-content">
-                        <h2 className="services-cta-title">Ready to Start Your Project?</h2>
-                        <p className="services-cta-desc">Let's discuss how we can help bring your vision to life.</p>
-                        <button className="services-cta-btn">Get Started</button>
-                    </div>
+                            <div className={styles.labelBar}>
+                                <span className={styles.greenLabel}>{tier.title}</span>
+                            </div>
+                            <div className={styles.cardOverlay} style={{ backgroundColor: 'rgba(168, 85, 247, 0.6)' }}>
+                                <h3 className={styles.overlayTitle}>{tier.title}</h3>
+                                <div className={styles.arrowIcon}>
+                                    <ArrowUpRight size={28} color="#fff" />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>

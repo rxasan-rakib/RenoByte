@@ -1,0 +1,295 @@
+.servicesPage {
+  background-color: #000;
+  color: #fff;
+  font-family: "Outfit", "Inter", sans-serif; /* Matched to projects-container-new */
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.blueText {
+  color: #0055ff; /* Matched to .blue-text */
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url("../assets/computerlab.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroMainTitleGroup {
+  margin: auto 0;
+  text-align: center;
+}
+
+.heroTag {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #d1d5db;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 8vw, 5.5rem); /* Matched to projects-hero-title-new */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  letter-spacing: -2px;
+}
+
+.heroSubtitle {
+  font-family: 'Lexend Exa', sans-serif;
+  font-weight: 300;
+  font-size: clamp(16px, 4vw, 30px);
+  color: #a1a1aa;
+  line-height: 1.4;
+  max-width: 1000px;
+  text-align: center;
+  margin-bottom: 80px;
+  padding: 0 20px;
+}
+
+.sectionHeader {
+  padding: 8rem 0 4rem;
+  text-align: left;
+}
+
+.mainHeading {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.greenLabel {
+  color: #4ade80;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: none; /* Design shows title case */
+  display: block;
+  text-align: center;
+}
+
+.introDesc {
+  color: #4ade80;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  max-width: 800px;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding-bottom: 6rem;
+}
+
+.serviceCard {
+  position: relative;
+  aspect-ratio: 16/11;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.whiteCard {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1), filter 0.4s ease;
+}
+
+.serviceCard:hover .cardImage {
+  transform: scale(1.05);
+  filter: brightness(0.4);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(168, 85, 247, 0.5); /* Semi-transparent purple as in design */
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.serviceCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.overlayTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.arrowIcon {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.labelBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 1.25rem 2rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.serviceCard:hover .labelBar {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.labelTitle {
+  color: #4ade80;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.separatorText {
+  color: #4ade80;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.logoRowCard {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoFaded {
+  width: 60px;
+  height: auto;
+  opacity: 0.4;
+  filter: grayscale(1) brightness(2);
+}
+
+/* Watermark Section */
+.watermarkSection {
+  padding: 12rem 0;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(to bottom, #000, #050505);
+}
+
+.watermarkLogoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.watermarkLogo {
+  font-size: 18vw;
+  font-weight: 950;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.04);
+  letter-spacing: -0.05em;
+}
+
+.watermarkLogoActive {
+  color: rgba(255, 255, 255, 0.15); /* More visible as in design */
+}
+
+.footerDivider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #a855f7, #4ade80, transparent);
+  margin-top: -1px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hero {
+    height: 50vh;
+  }
+  
+  .watermarkLogo {
+    font-size: 25vw;
+  }
+  
+  .sectionHeader {
+    padding: 6rem 0 3rem;
+  }
+}
